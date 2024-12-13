@@ -63,13 +63,6 @@ class Light:
                     self.config), qos=0, retain=True)
 
     async def update(self):
-        await self.setup()
-
-        try:
-            await self.update_sensors()
-        except Exception as e:
-            logger.error("light sensors Error :")
-            logger.error(e)
 
         self.level_topic = light_level_topic.format(
             id=self.id, current_level=self.current_level)
