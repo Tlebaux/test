@@ -1,6 +1,5 @@
 import json
 import logging
-from .Sensor import Sensor
 
 logger = logging.getLogger(__name__)
 light_command_topic = "light/tydom/{id}/set_levelCmd"
@@ -89,14 +88,6 @@ class Light:
             self.id,
             self.current_level)
 
-    async def update_sensors(self):
-        for i, j in self.attributes.items():
-            if not i == 'device_type' and not i == 'id' and not i == 'device_id' and not i == 'endpoint_id':
-                new_sensor = Sensor(
-                    elem_name=i,
-                    tydom_attributes_payload=self.attributes,
-                    mqtt=self.mqtt)
-                await new_sensor.update()
 
     @staticmethod
     async def put_level(tydom_client, device_id, light_id, level):
