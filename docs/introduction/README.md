@@ -18,20 +18,20 @@ version: '3'
 
 services:
   tydom2mqtt:
-    image: fmartinou/tydom2mqtt
+    image: Tlebaux/tydom2mqtt
     container_name: tydom2mqtt
     environment:
       - TYDOM_MAC=001A25XXXXXX
-      - TYDOM_PASSWORD=azerty123456789
+      - TYDOM_PASSWORD=azertypass
       - TYDOM_IP=192.168.1.33
 ```
 #### **Docker**
 ```bash
 docker run -d --name tydom2mqtt \
   -e TYDOM_MAC="001A25XXXXXX" \
-  -e TYDOM_PASSWORD="azerty123456789" \
+  -e TYDOM_PASSWORD="azertypass" \
   -e TYDOM_IP="192.168.1.33" \  
-  fmartinou/tydom2mqtt
+  Tlebaux/tydom2mqtt
 ```
 <!-- tabs:end -->
 
@@ -39,12 +39,7 @@ docker run -d --name tydom2mqtt \
 
 !> Are you a Home-Assistant user? \
 So maybe take a look at the [Hass.io add-on version](/hass/)!
-## Contact & Support
 
-- Create a [GitHub issue](https://github.com/fmartinou/tydom2mqtt/issues) for bug reports, feature requests, or questions
-- Add a ⭐️ [star on GitHub](https://github.com/fmartinou/tydom2mqtt) to support the project!
-
-## License
 
 This project is licensed under the [MIT license](https://github.com/fmartinou/tydom2mqtt/blob/master/LICENSE).
 
