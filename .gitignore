@@ -1,7 +1,0 @@
-.idea/
-**/__pycache__/
-**/node_modules/
-.DS_Store
-app/.venv/
-.gitignore
-.vs/
